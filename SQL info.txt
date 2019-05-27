@@ -1,0 +1,35 @@
+Inner/Left are most important
+-Inner = vrakja zaednicki parovi
+
+-Left
+
+[Tables]
+[1/2]
+[2/3]
+
+vrakja
+1/null
+2/2
+
+ja zima za referenca levata tabela , 
+go zima 1 i bidejki ne naogja nigde u desna strana par stava null
+pa go zima 2 , i ako najde par go pisuva i prekinuva, ako ne pak null
+
+
+select BusinessEntityId, b.Name,o.OrderDate, sum(TotalPrice) 
+from dbo.[Order] o
+inner join dbo.BusinessEntity b on b.Id = o.BusinessEntityId
+where o.OrderDate >= '2019.01.01' 
+group by BusinessEntityId, b.Name,o.OrderDate
+order by BusinessEntityId
+---------------------------------------------------------------------------------------------------------
+declare @EmployeeId INT
+SET @EmployeeId = 1
+
+select * 
+from dbo.Employee e
+where e.Id = @EmployeeId
+
+
+Variabli , koa pravime run treba se da selektirame
+
